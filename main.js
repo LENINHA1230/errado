@@ -40,4 +40,23 @@ var perguntas = [
             "Mão de obra barata"
         ]
     }
-]
+];
+
+
+var posiçaoAtual = 0;
+var perguntaAtual;
+
+mostraPergunta();
+
+function mostraPergunta(){
+    perguntaAtual = perguntas[posiçaoAtual];
+    cxPerguntas.textContent = perguntaAtual.enunciado;
+mostraalternativa();
+}
+function mostraalternativa(){
+    for (var alternativas of perguntaAtual.alternativas) {
+        var botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativas;
+        cxAlternativas.appendChild(botaoAlternativas);
+    }
+}
